@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D2B577F1DA00DC500CBD117 /* Count+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B577D1DA00DC500CBD117 /* Count+CoreDataClass.swift */; };
+		2D2B57801DA00DC500CBD117 /* Count+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B577E1DA00DC500CBD117 /* Count+CoreDataProperties.swift */; };
+		2D2B57841DA0130F00CBD117 /* CountPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B57831DA0130F00CBD117 /* CountPersister.swift */; };
+		2D2B57871DA04B9F00CBD117 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B57861DA04B9F00CBD117 /* ListTableViewCell.swift */; };
 		2DD66A991D9FEF0C0018BC46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD66A981D9FEF0C0018BC46 /* AppDelegate.swift */; };
 		2DD66A9B1D9FEF0C0018BC46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD66A9A1D9FEF0C0018BC46 /* ViewController.swift */; };
 		2DD66A9E1D9FEF0C0018BC46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD66A9C1D9FEF0C0018BC46 /* Main.storyboard */; };
@@ -14,9 +18,14 @@
 		2DD66AA31D9FEF0C0018BC46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD66AA21D9FEF0C0018BC46 /* Assets.xcassets */; };
 		2DD66AA61D9FEF0C0018BC46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD66AA41D9FEF0C0018BC46 /* LaunchScreen.storyboard */; };
 		2DD66AAF1D9FF4680018BC46 /* Pop.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2DD66AAE1D9FF4680018BC46 /* Pop.aiff */; };
+		2DD66AB41D9FFC7B0018BC46 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD66AB31D9FFC7B0018BC46 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D2B577D1DA00DC500CBD117 /* Count+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Count+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2D2B577E1DA00DC500CBD117 /* Count+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Count+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2D2B57831DA0130F00CBD117 /* CountPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountPersister.swift; sourceTree = "<group>"; };
+		2D2B57861DA04B9F00CBD117 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		2DD66A951D9FEF0C0018BC46 /* Attendees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attendees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD66A981D9FEF0C0018BC46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD66A9A1D9FEF0C0018BC46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +35,7 @@
 		2DD66AA51D9FEF0C0018BC46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DD66AA71D9FEF0C0018BC46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DD66AAE1D9FF4680018BC46 /* Pop.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Pop.aiff; sourceTree = "<group>"; };
+		2DD66AB31D9FFC7B0018BC46 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +49,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D2B57811DA0127100CBD117 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D2B577D1DA00DC500CBD117 /* Count+CoreDataClass.swift */,
+				2D2B577E1DA00DC500CBD117 /* Count+CoreDataProperties.swift */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		2D2B57821DA0128200CBD117 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2DD66A9A1D9FEF0C0018BC46 /* ViewController.swift */,
+				2DD66AB31D9FFC7B0018BC46 /* ListViewController.swift */,
+				2D2B57861DA04B9F00CBD117 /* ListTableViewCell.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2D2B57851DA0135900CBD117 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2DD66A9F1D9FEF0C0018BC46 /* Attendees.xcdatamodeld */,
+				2D2B57831DA0130F00CBD117 /* CountPersister.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		2DD66A8C1D9FEF0C0018BC46 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +97,15 @@
 		2DD66A971D9FEF0C0018BC46 /* Attendees */ = {
 			isa = PBXGroup;
 			children = (
+				2D2B57851DA0135900CBD117 /* CoreData */,
+				2D2B57821DA0128200CBD117 /* Controllers */,
+				2D2B57811DA0127100CBD117 /* Model */,
 				2DD66AAD1D9FF45A0018BC46 /* Sounds */,
 				2DD66A981D9FEF0C0018BC46 /* AppDelegate.swift */,
-				2DD66A9A1D9FEF0C0018BC46 /* ViewController.swift */,
 				2DD66A9C1D9FEF0C0018BC46 /* Main.storyboard */,
 				2DD66AA21D9FEF0C0018BC46 /* Assets.xcassets */,
 				2DD66AA41D9FEF0C0018BC46 /* LaunchScreen.storyboard */,
 				2DD66AA71D9FEF0C0018BC46 /* Info.plist */,
-				2DD66A9F1D9FEF0C0018BC46 /* Attendees.xcdatamodeld */,
 			);
 			path = Attendees;
 			sourceTree = "<group>";
@@ -152,9 +192,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2B57841DA0130F00CBD117 /* CountPersister.swift in Sources */,
+				2D2B57871DA04B9F00CBD117 /* ListTableViewCell.swift in Sources */,
 				2DD66A9B1D9FEF0C0018BC46 /* ViewController.swift in Sources */,
+				2D2B57801DA00DC500CBD117 /* Count+CoreDataProperties.swift in Sources */,
+				2D2B577F1DA00DC500CBD117 /* Count+CoreDataClass.swift in Sources */,
 				2DD66A991D9FEF0C0018BC46 /* AppDelegate.swift in Sources */,
 				2DD66AA11D9FEF0C0018BC46 /* Attendees.xcdatamodeld in Sources */,
+				2DD66AB41D9FFC7B0018BC46 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +361,7 @@
 				2DD66AAC1D9FEF0C0018BC46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
