@@ -43,7 +43,7 @@ class CountPersister: NSObject {
     static func loadExamples() -> Void {
         if (0 == self.countAll()) {
             self.save(counter: 171, title: "Goals in World Cup 2014")
-            self.save(counter: 206, title: "United Nations member states")
+            self.save(counter: 206, title: "United Nations members")
             self.save(counter: 8,   title: "Light minutes to the sun")
         }
     }

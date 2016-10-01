@@ -11,6 +11,7 @@
 		2D2B57801DA00DC500CBD117 /* Count+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B577E1DA00DC500CBD117 /* Count+CoreDataProperties.swift */; };
 		2D2B57841DA0130F00CBD117 /* CountPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B57831DA0130F00CBD117 /* CountPersister.swift */; };
 		2D2B57871DA04B9F00CBD117 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B57861DA04B9F00CBD117 /* ListTableViewCell.swift */; };
+		2DADFB761DA07FFB004A824D /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DADFB751DA07FFB004A824D /* TimeAgo.swift */; };
 		2DD66A991D9FEF0C0018BC46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD66A981D9FEF0C0018BC46 /* AppDelegate.swift */; };
 		2DD66A9B1D9FEF0C0018BC46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD66A9A1D9FEF0C0018BC46 /* ViewController.swift */; };
 		2DD66A9E1D9FEF0C0018BC46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD66A9C1D9FEF0C0018BC46 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		2D2B577E1DA00DC500CBD117 /* Count+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Count+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2D2B57831DA0130F00CBD117 /* CountPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountPersister.swift; sourceTree = "<group>"; };
 		2D2B57861DA04B9F00CBD117 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		2DADFB751DA07FFB004A824D /* TimeAgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAgo.swift; sourceTree = "<group>"; };
 		2DD66A951D9FEF0C0018BC46 /* Attendees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attendees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD66A981D9FEF0C0018BC46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD66A9A1D9FEF0C0018BC46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		2DADFB771DA08000004A824D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				2DADFB751DA07FFB004A824D /* TimeAgo.swift */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		2DD66A8C1D9FEF0C0018BC46 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 		2DD66A971D9FEF0C0018BC46 /* Attendees */ = {
 			isa = PBXGroup;
 			children = (
+				2DADFB771DA08000004A824D /* Tools */,
 				2D2B57851DA0135900CBD117 /* CoreData */,
 				2D2B57821DA0128200CBD117 /* Controllers */,
 				2D2B57811DA0127100CBD117 /* Model */,
@@ -194,6 +205,7 @@
 			files = (
 				2D2B57841DA0130F00CBD117 /* CountPersister.swift in Sources */,
 				2D2B57871DA04B9F00CBD117 /* ListTableViewCell.swift in Sources */,
+				2DADFB761DA07FFB004A824D /* TimeAgo.swift in Sources */,
 				2DD66A9B1D9FEF0C0018BC46 /* ViewController.swift in Sources */,
 				2D2B57801DA00DC500CBD117 /* Count+CoreDataProperties.swift in Sources */,
 				2D2B577F1DA00DC500CBD117 /* Count+CoreDataClass.swift in Sources */,

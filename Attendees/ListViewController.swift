@@ -14,12 +14,15 @@ class ListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Listen to right swipe
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeRight))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // Add some space on top of the table
+        self.tableView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,11 +41,19 @@ class ListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell
+        cell.dateLabel.text  = timeAgoSince(date: counts[indexPath.row].date!)
         cell.titleLabel.text = counts[indexPath.row].title
         cell.countLabel.text = String(counts[indexPath.row].count)
         return cell
     }
 
+    // MARK: Functions
+    func respondToSwipeRight(gesture: UIGestureRecognizer) {
+        if gesture is UISwipeGestureRecognizer {
+            _ = navigationController?.popViewController(animated: true)
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
