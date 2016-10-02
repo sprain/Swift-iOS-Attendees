@@ -9,12 +9,13 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , UITextFieldDelegate{
 
     /// MARK: Properties
     @IBOutlet weak var countButton: UIButton!
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var cancelSaveButton: UIButton!
+    @IBOutlet weak var saveTitleInput: UITextField!
     
     /// User defaults
     let defaults = UserDefaults.standard
@@ -56,6 +57,7 @@ class ViewController: UIViewController {
         // Prepare interface
         prepareAudio()
         saveView.isHidden = true
+        saveTitleInput.delegate = self
         
         // Listen to left swipe
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeLeft))
@@ -103,6 +105,8 @@ class ViewController: UIViewController {
                 })
             }
         )
+        
+        saveTitleInput.becomeFirstResponder()
     }
     
     @IBAction func cancelSaveButtonTapped(_ sender: UIButton) {
@@ -130,6 +134,11 @@ class ViewController: UIViewController {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "List") as? ListViewController
             navigationController?.pushViewController(vc!, animated: true)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 }
 

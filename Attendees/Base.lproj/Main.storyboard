@@ -52,10 +52,19 @@
                                             <action selector="cancelSaveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ghh-S7-dXi"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What did you count?" textAlignment="center" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yds-Hx-Ppm">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="yds-Hx-Ppm" secondAttribute="trailing" id="3Yx-8o-N4O"/>
+                                    <constraint firstItem="yds-Hx-Ppm" firstAttribute="top" secondItem="KN1-FJ-2yd" secondAttribute="top" constant="20" id="415-TG-hH7"/>
+                                    <constraint firstItem="yds-Hx-Ppm" firstAttribute="centerX" secondItem="KN1-FJ-2yd" secondAttribute="centerX" id="6Ay-5h-LI9"/>
                                     <constraint firstItem="FLk-nc-buP" firstAttribute="leading" secondItem="KN1-FJ-2yd" secondAttribute="leading" id="hmQ-Oz-ZIL"/>
+                                    <constraint firstItem="yds-Hx-Ppm" firstAttribute="leading" secondItem="KN1-FJ-2yd" secondAttribute="leading" id="kR5-Zx-JdQ"/>
                                     <constraint firstAttribute="bottom" secondItem="FLk-nc-buP" secondAttribute="bottom" id="p3X-0T-4fC"/>
                                 </constraints>
                             </view>
@@ -80,6 +89,7 @@
                     <connections>
                         <outlet property="cancelSaveButton" destination="FLk-nc-buP" id="8fc-bC-gDP"/>
                         <outlet property="countButton" destination="ReW-QW-Ci4" id="EkF-a2-MNG"/>
+                        <outlet property="saveTitleInput" destination="yds-Hx-Ppm" id="38e-rg-OFV"/>
                         <outlet property="saveView" destination="KN1-FJ-2yd" id="39G-kC-KW3"/>
                     </connections>
                 </viewController>
