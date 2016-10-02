@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     /// MARK: Properties
     @IBOutlet weak var countButton: UIButton!
+    @IBOutlet weak var saveView: UIView!
+    @IBOutlet weak var cancelSaveButton: UIButton!
     
     /// User defaults
     let defaults = UserDefaults.standard
@@ -22,6 +24,9 @@ class ViewController: UIViewController {
     
     /// The audio played when tapping the count button
     var pop:AVAudioPlayer = AVAudioPlayer()
+    
+    var currentViewHeight: CGFloat = 0
+    var countButtonOriginalHeight: CGFloat = 0
     
     /// The current counter value
     var counter: Int = 0 {
@@ -48,8 +53,9 @@ class ViewController: UIViewController {
             defaults.set(true, forKey: "isInUsage")
         }
         
-        // Prepare audio
+        // Prepare interface
         prepareAudio()
+        saveView.isHidden = true
         
         // Listen to left swipe
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeLeft))
@@ -74,6 +80,41 @@ class ViewController: UIViewController {
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         counter = 0
     }
+    
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
+        currentViewHeight = view.frame.height
+        countButtonOriginalHeight = countButton.frame.height
+        countButton.isEnabled = false
+        
+        // Push save view out of current view
+        saveView.frame.origin.y = currentViewHeight
+        saveView.isHidden = false
+        cancelSaveButton.alpha = 0;
+
+        // Move in save view
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut,
+            animations: {
+                self.saveView.frame.origin.y = self.currentViewHeight/2
+                self.countButton.frame.size.height = (self.countButtonOriginalHeight/2)
+            },
+            completion: { finished in
+                UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: {
+                    self.cancelSaveButton.alpha = 1;
+                })
+            }
+        )
+    }
+    
+    @IBAction func cancelSaveButtonTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+            self.saveView.frame.origin.y = self.currentViewHeight
+            self.countButton.frame.size.height = self.countButtonOriginalHeight
+        })
+        
+        saveView.isHidden = true
+        countButton.isEnabled = true
+    }
+    
     
     // MARK: Functions
     func prepareAudio() -> Void {

@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,6 +23,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReW-QW-Ci4">
                                 <color key="backgroundColor" red="0.16291236877441406" green="0.49721962213516235" blue="0.72078460454940796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ReW-QW-Ci4" secondAttribute="height" multiplier="343:543" id="voI-ys-245"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <state key="normal" title="568"/>
                                 <connections>
@@ -35,23 +40,47 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrj-Hc-6Ks">
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cd4-gD-QV8"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" restorationIdentifier="saveView" translatesAutoresizingMaskIntoConstraints="NO" id="KN1-FJ-2yd">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-nc-buP">
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelSaveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ghh-S7-dXi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="FLk-nc-buP" firstAttribute="leading" secondItem="KN1-FJ-2yd" secondAttribute="leading" id="hmQ-Oz-ZIL"/>
+                                    <constraint firstAttribute="bottom" secondItem="FLk-nc-buP" secondAttribute="bottom" id="p3X-0T-4fC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="KN1-FJ-2yd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7Yk-pp-KSj"/>
                             <constraint firstItem="ReW-QW-Ci4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="ERx-yw-jS4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ReW-QW-Ci4" secondAttribute="bottom" constant="50" id="TGT-Pi-D09"/>
                             <constraint firstItem="ReW-QW-Ci4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fJR-P2-kR5"/>
+                            <constraint firstItem="KN1-FJ-2yd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gRT-61-WNP"/>
                             <constraint firstItem="fz3-oZ-ovm" firstAttribute="top" secondItem="ReW-QW-Ci4" secondAttribute="bottom" constant="10" id="lPR-M7-7MH"/>
                             <constraint firstItem="fz3-oZ-ovm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="piL-r2-jFL"/>
                             <constraint firstItem="jrj-Hc-6Ks" firstAttribute="top" secondItem="ReW-QW-Ci4" secondAttribute="bottom" constant="10" id="rN7-5W-dhN"/>
+                            <constraint firstItem="KN1-FJ-2yd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rx3-Ad-WeU"/>
                             <constraint firstItem="jrj-Hc-6Ks" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ugg-v1-zuS"/>
+                            <constraint firstItem="KN1-FJ-2yd" firstAttribute="bottom" secondItem="jrj-Hc-6Ks" secondAttribute="bottom" id="vFl-nX-oFu"/>
                             <constraint firstItem="ReW-QW-Ci4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="y6Q-Jx-cIj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5pT-BW-8Fk"/>
                     <connections>
+                        <outlet property="cancelSaveButton" destination="FLk-nc-buP" id="8fc-bC-gDP"/>
                         <outlet property="countButton" destination="ReW-QW-Ci4" id="EkF-a2-MNG"/>
+                        <outlet property="saveView" destination="KN1-FJ-2yd" id="39G-kC-KW3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -71,7 +100,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="caj-3v-XgQ" id="PDq-0F-Ejw">
-                                    <frame key="frameInset" width="375" height="79"/>
+                                    <frame key="frameInset" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="countLabel" text="568" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCf-nP-D0i">
