@@ -22,6 +22,11 @@ class CountPersister: NSObject {
         do {try self.context.save()} catch {}
     }
     
+    static func delete(count: Count) {
+        self.context.delete(count)
+        do {try self.context.save()} catch {}
+    }
+    
     static func countAll() -> Int {
         do {
             let count = try self.context.count(for: self.countFetchRequest)
